@@ -21,9 +21,9 @@ REMOTE_DATA = 'Apple-Twitter-Sentiment-DFE_encoded11.csv'
 #load_dotenv()simple_streamlit_visualization
 
 # load Backblaze connection
-b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
-        key_id=os.environ['B2_KEYID'],
-        secret_key=os.environ['B2_APPKEY'])
+b2 = B2(endpoint=os.getenv('B2_ENDPOINT'),
+        key_id=os.getenv('B2_KEYID'),
+        secret_key=os.getenv('B2_APPKEY'))
 
 
 
