@@ -34,7 +34,7 @@ b2 = B2(endpoint=os.getenv('B2_ENDPOINT'),
 def get_data():
 
     # collect data frame of reviews and their sentiment
-    b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    b2.set_bucket(os.getenv('B2_BUCKETNAME'))
     df_apple = b2.get_df(REMOTE_DATA)
     df_apple['date'] = pd.to_datetime(df_apple['date'], format='%a %b %d %H:%M:%S %z %Y')
     df_apple['day_month_year'] = df_apple['date'].dt.strftime('%d/%m/%Y')  
